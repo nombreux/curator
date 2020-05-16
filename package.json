@@ -1,0 +1,30 @@
+{
+  "name": "curator",
+  "version": "0.0.1",
+  "description": "A system to manage and monitor everything related to your customer/subscribers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nombreux/curator.git"
+  },
+  "keywords": [
+    "curator",
+    "subscriber-management-system",
+    "modern-crm"
+  ],
+  "author": "shiladitya@nomberux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nombreux/curator/issues"
+  },
+  "homepage": "https://github.com/nombreux/curator#readme",
+  "devDependencies": {
+    "eslint": "^7.0.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.678.0"
+  }
+}
