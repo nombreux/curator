@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: >-
+  Curator
+Transform:
+- AWS::Serverless-2016-10-31
+
+Parameters:
+  AppId:
+    Type: String
+
+Resources:
+  Curator:
+    Type: AWS::Serverless::Function
+    Properties:
+      Description: This endpoint will update the dynamoDB with the csv date posted on this endpoint through an HTTP post request.
+      Handler: src/lambda-handlers/dataHandelers.dataReplication
+      Runtime: nodejs12.x
+      MemorySize: 128
+      Timeout: 100
+      
+      # Policies:
+      #   # Give Create/Read/Update/Delete Permissions to the SampleTable
+      #   - DynamoDBCrudPolicy:
+      #       TableName: !Ref SampleTable
+      # Environment:
+      #   Variables:
+      #     # Make table name accessible as environment variable from function code during execution
+      #     SAMPLE_TABLE: !Ref SampleTable
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /
+            Method: POST
+
+Outputs:
+  WebEndpoint:
+    Description: "Curator API Gateway endpoint URL for dev stage"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/dev/"
