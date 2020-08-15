@@ -30,7 +30,7 @@ Resources:
             Path: /upload/subscribers/basic/csv
             Method: POST            
 
-Outputs:
-  WebEndpoint:
-    Description: "Curator API Gateway endpoint URL for dev stage"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/dev/"
+# Outputs:
+#   WebEndpoint:
+#     Description: "Curator API Gateway endpoint URL for dev stage"
+#     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/dev/"
