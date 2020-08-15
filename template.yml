@@ -4,9 +4,6 @@ Description: >-
 Transform:
 - AWS::Serverless-2016-10-31
 
-Parameters:
-  AppId:
-    Type: String
 
 Resources:
   Curator:
@@ -28,10 +25,10 @@ Resources:
       #     SAMPLE_TABLE: !Ref SampleTable
       Events:
         Api:
-          Type: Api
+          Type: HttpApi
           Properties:
-            Path: /
-            Method: POST
+            Path: /uploadCsv
+            Method: POST            
 
 Outputs:
   WebEndpoint:

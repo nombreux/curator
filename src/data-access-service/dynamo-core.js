@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
+require('dotenv').config()
 
 const AWS=require('aws-sdk');
-const cred=new AWS.Credentials("AKIAJOXPG66UBWTKHLZA","RYxTBQo5m8Qw3n40tm+UFD5TbRznNQ0f2ARDYc5o");
-var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10',region:"ap-south-1",credentials:cred});
+const cred=new AWS.Credentials(process.env.accessKeyId,process.env.secretAccessKey);
+var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10',region:process.env.region,credentials:cred});
 
 /**
  * @typedef DynamoDbResponse
@@ -12,8 +13,6 @@ var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10',region:"ap-south-1",cr
  * @property {number} statusCode - StatusCode of the API call.
  * @property {string} data - Gives the data if there is any
  */
-
-
 
 /**
  * 
