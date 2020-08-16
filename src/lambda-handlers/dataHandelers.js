@@ -29,7 +29,7 @@ exports.dataReplication = async (event) => {
 
         const response = {
             statusCode: 200,
-            log: JSON.stringify(res)
+            body: JSON.stringify(res)
         };
     
         // All log statements are written to CloudWatch
@@ -39,7 +39,7 @@ exports.dataReplication = async (event) => {
     } catch (error) {
         const response = {
             statusCode: 400,
-            log: error
+            body: error
         };
     
         // All log statements are written to CloudWatch
